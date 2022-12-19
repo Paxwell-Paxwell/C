@@ -9,6 +9,7 @@
         "limits": "c",
         "ratio": "c",
         "sstream": "c",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "vector": "cpp"
     }
 }
