@@ -10,6 +10,7 @@
         "ratio": "c",
         "sstream": "c",
         "iostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "stack": "cpp"
     }
 }

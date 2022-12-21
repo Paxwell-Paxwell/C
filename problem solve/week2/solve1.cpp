@@ -1,8 +1,32 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
+#include <stack>
 
 using namespace std;
+
+int check(int *data,int n){
+    stack<int> rail;
+    rail.push(0);
+    int i=1,k=0;
+    while(1){
+        //cout<<i<<" "<<k<<"\n";
+        if(i<=n&&rail.top()!=data[k]){
+            rail.push(i); i++;
+            continue;
+        }
+        if(rail.top()==data[k]){
+            rail.pop();
+            k++;
+
+        }
+        if(k>=n)
+            return 1;
+        if(i>n && rail.top()!=data[k])
+            return 0;
+
+    }
+    return 1;
+}
 
 int main() {
     // Read input
@@ -12,37 +36,29 @@ int main() {
     {
         if(n==0)
             break;
-        int a[n],min,value;
-        int out = 1;
-        int index = 0;
-        while(out){
-            value =1;
-            for (int i=0;i<n;i++){
+        int value,k=0;
+        while(1){
+            int a[n];
+            for(int i=0;i<n;i++){
                 cin>>a[i];
-                if(a[0]==0){
-                    bl.push_back(index);
-                    index = 0;
-                    out = 0;
+                if (a[0]==0)
                     break;
-                }
-                if(i==0){
-                    min = a[0];
-                    continue;
-                }
-                if(a[i]==min-1)
-                    min--;
-                else if (a[i]>min)
-                    continue;
-                else{
-                    value =0;
-                }
             }
-            if (a[0] != 0){
-                index++;
+            if(a[0]==0) {
+                bl.push_back(k);
+                break;
+            }
+            
+            if(a[0]!=0) {
+
+                value  = check(a,n) ;
                 ch.push_back(value);
+                k++;
             }
         }
         
+        
+
     }
     vector<int>::iterator it,ib;
 
