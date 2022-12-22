@@ -11,6 +11,8 @@
         "sstream": "c",
         "iostream": "cpp",
         "vector": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "queue": "cpp",
+        "random": "cpp"
     }
 }

@@ -70,8 +70,10 @@ int main() {
         else cout << "No" << "\n";
         i++;
         if (*(ib+k)==i){
+            i=0;
             cout<<"\n";
             k++;
+            
         }
     }
     return 0;
