@@ -13,6 +13,7 @@
         "vector": "cpp",
         "stack": "cpp",
         "queue": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "string": "cpp"
     }
 }
