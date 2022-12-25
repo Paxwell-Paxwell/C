@@ -7,8 +7,7 @@ int main() {
    int M;
    cin>>M;
    char com;
-   vector< list<int> > platform(M);
-   fill(platform.begin(), platform.end(), list<int>());
+   list<int>  platform[100001];
    for(int k=0;k<M;k++){
         cin>>com;
         switch (com)
@@ -21,6 +20,7 @@ int main() {
         case 'M':
             int i,j;
             cin>>i>>j;
+            if(i==j) break;
             platform[j].splice(platform[j].end(),platform[i]);
             platform[i].clear();
             break;
@@ -28,7 +28,7 @@ int main() {
             break;
         }
    }
-   for (int i = 0; i < M; i++)
+   for (int i = 0; i < 100001; i++)
    {
         if(platform[i].empty())
             continue;
