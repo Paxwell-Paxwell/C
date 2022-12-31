@@ -3,16 +3,18 @@
 #include <iostream>
 using namespace std;
 
-#define MAX_N  100000
-
 int n,m;
 
-vector<int> adj[MAX_N];
-int deg[MAX_N];
+vector<int> *adj;
+int *deg;
+bool *visited;
 
 void read_input()
 {
   scanf("%d %d",&n,&m);
+  adj= new vector<int>[n];
+  deg= new int[n];
+  visited = new bool[n];
   for(int i=0; i<n; i++) {
     deg[i] = 0;
   }
@@ -26,11 +28,9 @@ void read_input()
   }
 }
 
-bool visited[MAX_N];
-
 void init()
 {
-  fill(visited,visited+MAX_N,false);
+  fill(visited,visited+n,false);
 }
 
 void dfs(int u)
@@ -48,9 +48,9 @@ int main(){
     read_input();
     init();
     int con=0;
-    for (int i = 0; i < 100000; i++)
+    for (int i = 0; i < n; i++)
     {
-       if(visited[i]||deg[i]==0){
+       if(visited[i]){
             continue;
        }
        dfs(i);
