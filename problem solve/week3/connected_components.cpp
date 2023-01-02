@@ -20,7 +20,7 @@ void read_input()
   }
   for(int i=0; i<m; i++) {
     int u,v;
-    scanf("%d %d",&u,&v); u--; v--;
+    scanf("%d`   %d",&u,&v); u--; v--;
     adj[u].push_back(v);
     adj[v].push_back(u);
     deg[u]++;

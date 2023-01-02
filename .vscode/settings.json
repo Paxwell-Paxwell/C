@@ -25,6 +25,9 @@
         "__split_buffer": "cpp",
         "deque": "cpp",
         "initializer_list": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "__tree": "cpp",
+        "set": "cpp",
+        "ostream": "cpp"
     }
 }
