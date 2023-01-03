@@ -1,12 +1,7 @@
-#include <vector>
 #include <iostream>
 using namespace std;
 int main(){
-    int N_E[2];
-    int S_W[2];
-    fill(N_E,N_E+2,0);
-    fill(S_W,S_W+2,0);
-
+    int n=0,s=0,w=0,e=0;
     char command;
     while(1) {
         scanf("%c",&command);
@@ -16,16 +11,16 @@ int main(){
         switch (command)
         {
         case 'N':
-            N_E[0]++;
+            n++;
             break;
         case 'E':
-            N_E[1]++;
+            e++;
             break;
         case 'S':
-            S_W[0]++;
+            s++;
             break;
         case 'W':
-            S_W[1]++;
+            w++;
             break;
         default:
             break;
@@ -33,34 +28,18 @@ int main(){
     }
     int l;
     cin>>l;
-    int n=0,r1=0,r2=0;
-    while(n < l)
+    if(n<s)swap(n,s);
+    if(e<w)swap(e,w);
+    while(l)
     {
-        if(r1<2){
-            if(N_E[r1]==0||S_W[r1]==0){
-                r1++;
-                continue;
-            }
-            int *min=(N_E[r1]<=S_W[r1])? N_E:S_W;
-            min[r1]--;
-            n++;
-        }
-        else if(r1>=2){
-
-            if(N_E[r2]==0&&S_W[r2]==0){
-                r2++;
-                continue;
-            }
-            int *max=(N_E[r2]>=S_W[r2])? N_E:S_W;
-            max[r2]--;
-            n++;
-
-        }
+        
+        l--;
+        if(s!=0)s--;
+        else if(w!=0)w--;
+        else if(n!=0)n--;
+        else if(e!=0)e--;
     }
-    int sum=0;
-    for(int i=0;i<2;i++){
-        sum+= abs(N_E[i]-S_W[i]);
-    }
+    int sum=abs(n-s)+abs(w-e);
     cout<<sum*2;
     return 0;
 }
