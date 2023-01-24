@@ -66,9 +66,15 @@ int main(){
     for (int i = 0; i < all_out.size(); i++)
     {
         for(int j=0;j<all_out[i].size();j++){
-            cout<<all_out[i][j]+1<<" ";
+            if(j==0){
+                cout<<all_out[i][j]+1;
+                continue;
+            }
+            cout<<" "<<all_out[i][j]+1;
     }
-        cout<<"\n";
+        if(i != all_out.size()-1 )
+            cout<<"\n";
+        
     }
     
     
