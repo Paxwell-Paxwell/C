@@ -28,6 +28,10 @@
         "string_view": "cpp",
         "__tree": "cpp",
         "set": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "__node_handle": "cpp",
+        "unordered_set": "cpp",
+        "forward_list": "cpp",
+        "valarray": "cpp"
     }
 }
